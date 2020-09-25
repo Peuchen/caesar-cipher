@@ -20,17 +20,34 @@ puts "The revised shift factor is #{shift_factor}"
 #Convert the characters into numbers
 #Add the shift factor to the numbers
 def convert_characters(arr, shift_factor)
-  output = arr.map { |c| c.ord + shift_factor}
+  output = arr.map { |c| c.ord}
+  p "Before conversion:"
   p output
 #If the new number exceeds the range for the characters, detract 26 to keep it within the range
-  output = output.map do
-    #|n| if n >= "a".ord && "z"
+  output = output.map do |n|
+    if n >= "A".ord && n <= "Z".ord
+      n += shift_factor
+      if n > "Z".ord
+        n -= 26
+      end
+    elsif n >= "a".ord && n <= "z".ord
+      n += shift_factor
+      if n > "z".ord
+        n -= 26
+      end
+    end
+    n
   end
+
+  p "After conversion:"
+  p output
+
+  #Convert the numbers back into characters
+  output = output.map { |n| n.chr }
+  #Join the characters back together
+  output.join('')
+  #Print the string
+  print output
 end
-
-
-#Convert the numbers back into characters
-#Join the characters back together
-#Print the string
 
 convert_characters(val, shift_factor)
