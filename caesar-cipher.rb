@@ -1,10 +1,10 @@
 #Ask the user to input a string
+puts "Please enter a string to encrypt"
 string = gets.chomp
-puts "You have entered the string '#{string}'"
 
 #Ask the user to choose a shift factor
+puts "Please enter a shift factor"
 shift_factor = gets.chomp.to_i
-puts "You have entered the shift factor'#{shift_factor}'"
 
 #Split the sentence in separate characters
 val = string.split('')
