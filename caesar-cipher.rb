@@ -45,9 +45,9 @@ def convert_characters(arr, shift_factor)
   #Convert the numbers back into characters
   output = output.map { |n| n.chr }
   #Join the characters back together
-  output.join('')
+  output = output.join('')
   #Print the string
-  print output
+  puts output
 end
 
 convert_characters(val, shift_factor)
