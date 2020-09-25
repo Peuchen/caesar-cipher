@@ -29,11 +29,15 @@ def convert_characters(arr, shift_factor)
       n += shift_factor
       if n > "Z".ord
         n -= 26
+      elsif n < "A".ord
+        n += 26
       end
     elsif n >= "a".ord && n <= "z".ord
       n += shift_factor
       if n > "z".ord
         n -= 26
+      elsif n < "a".ord
+        n += 26
       end
     end
     n
