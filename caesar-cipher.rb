@@ -8,21 +8,16 @@ shift_factor = gets.chomp.to_i
 
 #Split the sentence in separate characters
 val = string.split('')
-p val
 
 #If the shift factor exceeds 26 or -26, detract (mutiples of) 26 to keep the shift factor within the range
 if shift_factor > 26 || shift_factor < -26
   shift_factor %= 26
 end
 
-puts "The revised shift factor is #{shift_factor}"
-
 #Convert the characters into numbers
 #Add the shift factor to the numbers
 def convert_characters(arr, shift_factor)
   output = arr.map { |c| c.ord}
-  p "Before conversion:"
-  p output
 #If the new number exceeds the range for the characters, detract 26 to keep it within the range
   output = output.map do |n|
     if n >= "A".ord && n <= "Z".ord
@@ -43,14 +38,12 @@ def convert_characters(arr, shift_factor)
     n
   end
 
-  p "After conversion:"
-  p output
-
   #Convert the numbers back into characters
   output = output.map { |n| n.chr }
   #Join the characters back together
   output = output.join('')
   #Print the string
+  puts "The encrypted text is:"
   puts output
 end
 
