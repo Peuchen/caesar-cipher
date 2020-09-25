@@ -1,5 +1,7 @@
 #Ask the user to input a string
+string = gets.chomp
 #Ask the user to choose a shift factor
+shift_factor = gets.chomp.to_i
 #Split the sentence in separate characters
 #Convert the characters into numbers
 #Add the shift factor to the numbers
